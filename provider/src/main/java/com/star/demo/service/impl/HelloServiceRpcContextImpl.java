@@ -19,8 +19,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class HelloServiceRpcContextImpl implements HelloServiceRpcContext {
 
-    private ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(8,16,1,TimeUnit.MINUTES,
-            new SynchronousQueue<>(),new NamedThreadFactory("busi-thread-pool"),new ThreadPoolExecutor.CallerRunsPolicy());
+    private ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(8,16,
+            1,TimeUnit.MINUTES,
+            new SynchronousQueue<>(),
+            new NamedThreadFactory("busi-thread-pool"),
+            new ThreadPoolExecutor.CallerRunsPolicy());
 
     @Override
     public String sayHelloStr(String name) {
